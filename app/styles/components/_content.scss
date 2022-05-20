@@ -5,6 +5,27 @@
   position: relative;
   padding: 30px 0;
 
+  &:before{
+    width: 678px;
+    height: 887px;
+    top:50%;
+    right:0; 
+    position: absolute;
+    content:"";
+    background: functions.src("main__bg-right.png") 0 0 no-repeat;
+  }
+
+  &:after{
+    width: 658px;
+    height: 1500px;
+    top:63%;
+    left:0; 
+    position: absolute;
+    content:"";
+    background: functions.src("main__bg-left.png") 0 0 no-repeat;
+    
+  }
+
   &__title {
     display: block;
     text-align: center;
@@ -29,6 +50,7 @@
   margin-top: 10px;
   text-align: center;
   position: relative;
+  max-height: 1007px;
   > img{
     width: 64%;
   }
@@ -87,26 +109,224 @@
   }
 }
 
-
-.djs-list__picture-area{
-  max-width: 128px;
+.b-circle{
   position: relative;
   &:before{
+    width: 120px;
+    height: 120px;
+    top: 14px;
+    right: -9px;
     background: url(../img/dj_aura.svg) no-repeat;
-      border-radius: 50%;
-      content: "";
-      height: 120px;
-      position: absolute;
-      right: -6px;
-      top: 15px;
-      width: 120px;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+  }
+}
+
+.b-circle-big{
+  position: relative;
+
+  &:before{
+    width: 330px;
+    height: 330px;
+    top: 24px;
+    right: -19px;
+    content: "";
+    position: absolute;
+    background: url(../img/big-dj-aura.svg) no-repeat;
+
+  }
+}
+
+.b-rect{
+  position: relative;
+  
+  &:before{
+    width: 330px;
+    height: 330px;
+    
+    content: "";
+    position: absolute;
+    background: url(../img/Rectangle_3.svg) no-repeat;
+  }
+}
+
+.b-rect-left{
+  &:before{
+    top:18px;
+    left:-20px;
+  }
+}
+
+.b-rect-right{
+  &:before{
+    top: 20px;
+    right: -20px;
   }
 }
 
 .djs-list{
+  padding-bottom: 175px;
+  &__item{
+    
+    &:first-child{
+      .djs-list__add-info,
+      .djs-list__name{
+        text-align: left;
+      }
+    }
+
+    &:nth-child(2),&:nth-child(3) {
+      .djs-list__picture-area{
+        margin:0 auto 29px;
+      }
+    }
+
+  }
+
+  &__picture-area{
+    max-width: 128px;
+    position: relative;
+    margin-bottom: 29px;
+  }
+  
   &__picture{
     max-width: 128px;
     border-radius: 50%;
     overflow: hidden;
   }
+
+  &__name{
+    text-transform: uppercase;
+    font-size: rem(48px);
+    font-weight: 900;
+    line-height: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__add-info{
+    font-size: rem(20px);
+    background: $background_green;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: lowercase;
+  }
+  
+}
+
+.get-ready-h2{
+  margin-bottom: 30px;
+}
+
+.offer-area{
+  max-width: 175px;
+  margin:0 auto;
+  padding:20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  
+  ins{
+    margin-left: 10px;
+    font-weight: 900;
+    line-height: 120%;
+    color:$green;
+    text-decoration: none;
+  }
+  
+  del{
+    margin-left: 10px;
+    margin-top: 2px;
+  }
+
+  &__text{
+    line-height: 120%;
+    font-weight: 500;
+  }
+}
+
+.def-bg2{
+  font-size: rem(48px);
+  line-height: 120%;
+  text-transform: uppercase;
+  background: $background_purple;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 900;
+}
+
+.about,.aboutv2{
+  margin-top: 110px;
+  justify-content: space-between;
+  
+  &__picture{
+    max-width: 332px;
+  }
+  
+  &__text-area{
+    margin-top: 30px;
+    max-width: 700px;
+  
+    
+  }
+  
+  
+}
+
+.cuts{
+  margin-top: 135px;
+}
+
+.aboutv2{
+  
+  &__text-area{
+    margin-top: 60px;
+  }
+
+  &__picture{
+    img{
+      margin-bottom: 50px;
+    }
+  }
+
+}
+
+.story{
+  margin-top: 100px;
+  &__wrap{
+    margin-top: 90px;
+    justify-content: space-between;
+  }
+  &__address{
+    width: 18%;
+    align-items: center;
+    flex-direction: column;
+    
+    &-icon{
+      width: 77px;
+      height: 64px;
+      display: inline-block;
+      background: functions.src("Geo.svg") 0 0 no-repeat;
+    }
+  }
+  address{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 30px;
+    
+  }
+  
+}
+.faq-area{
+  width: 50%;
+  margin-top: 130px;
+  margin-left: auto;
 }
