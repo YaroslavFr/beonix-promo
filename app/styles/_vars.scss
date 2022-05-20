@@ -1,8 +1,9 @@
 // FONTS
-$userfont: 'Circe', sans-serif;
+$userfont: 'Gilroy', sans-serif;
 
 
 // COLORS
+$background:#000;
 $white: #ffffff;
 $black: #17191E;
 $dark: #22252D;
@@ -21,3 +22,7 @@ $breakpoints: (
   xs: 576px,
   xxs: 320px
 );
+
+
+// ASSETS PATH
+$imgSrc: '../img/';

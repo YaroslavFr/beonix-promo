@@ -1,13 +1,24 @@
 .navbar {
   position: relative;
-  z-index: 10;
+    z-index: 10;
+    padding-top: 25px;
   
   &__title {
     display: block;
     text-align: center;
-    font-size: rem(14px);
+    font-size: rem(16px);
+    line-height: 120%;
     padding: 50px 0;
     color: $grey;
     margin-bottom: 0;
+  }
+  
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  li{
+    padding:10px 0;
   }
 }

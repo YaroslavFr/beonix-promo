@@ -1,6 +1,9 @@
+@use "./vars";
+@use "./functions";
+
 .content {
   position: relative;
-  padding: 50px 0;
+  padding: 30px 0;
 
   &__title {
     display: block;
@@ -19,5 +22,91 @@
   &__label {
     color: $grey;
     margin-bottom: 20px;
+  }
+}
+
+.promodj{
+  margin-top: 10px;
+  text-align: center;
+  position: relative;
+  > img{
+    width: 64%;
+  }
+
+  &__name{
+    width: 90%;
+    height: 320px;
+    top: 367px;
+    position: absolute;
+    text-align: center;
+    
+    img{
+      max-width: 760px;
+    }
+  }
+
+  &__info{
+    position: relative;
+    bottom: 189px;
+  }
+
+  &__genre{
+    font-size: rem(48px);
+    line-height: 120%;
+    font-weight: 900;
+    background: linear-gradient(82.09deg, #4BFFFF -4.58%, #44D0A1 81.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-transform: uppercase;
+    position: relative;
+    // bottom: 125px;
+  }
+
+  &__description{
+    margin-top: 90px;
+    font-weight: 600;
+    font-size: rem(32px);
+    line-height: 120%;
+  }
+
+  &__event-time{
+    max-width: 440px;
+    margin:20px auto;
+    font-weight: 600;
+    font-size: rem(20px);
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    background: linear-gradient(82.09deg, #4BFFFF -4.58%, #44D0A1 81.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+
+
+.djs-list__picture-area{
+  max-width: 128px;
+  position: relative;
+  &:before{
+    background: url(../img/dj_aura.svg) no-repeat;
+      border-radius: 50%;
+      content: "";
+      height: 120px;
+      position: absolute;
+      right: -6px;
+      top: 15px;
+      width: 120px;
+  }
+}
+
+.djs-list{
+  &__picture{
+    max-width: 128px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }

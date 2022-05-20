@@ -1,3 +1,6 @@
+@use "./vars";
+@use "./functions";
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -25,6 +28,8 @@ body {
   overflow-x: hidden;
   height: auto;
   min-width: #{screen(xxs)};
+  background: functions.src('Waves_1.png') 0 0 repeat-x;
+  background-color: #000;
 }
 
 h1,
