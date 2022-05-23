@@ -30,3 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 })
+
+document.querySelectorAll('.about__picture-item').forEach(item => {
+	
+	item.addEventListener('click', event => {
+	  console.log(event.target);
+	  document.querySelectorAll('.about__picture_main-item')[0].classList.remove("about__picture_main-item");
+	  event.target.classList.add("about__picture_main-item");
+	  
+	})
+  })
+
+// let aboutBlockElems = document.getElementsByClassName('about__picture-item');
+// aboutBlockElems.addEventListener("click", positionChanger, false);
+

@@ -58,12 +58,12 @@
   &__name{
     width: 90%;
     height: 320px;
-    top: 367px;
+    top: 43%;
     position: absolute;
     text-align: center;
     
     img{
-      max-width: 760px;
+      max-width: 1100px;
     }
   }
 
@@ -108,7 +108,7 @@
     text-fill-color: transparent;
   }
 }
-
+.about__picture-item,
 .b-circle{
   position: relative;
   &:before{
@@ -122,19 +122,30 @@
     position: absolute;
   }
 }
-
+.about__picture-item.about__picture_main-item,
 .b-circle-big{
   position: relative;
 
   &:before{
     width: 330px;
     height: 330px;
-    top: 24px;
-    right: -19px;
+    top: 9px;
+    right: -9px;
+    background: url(../img/big-dj-aura.svg) no-repeat;
     content: "";
     position: absolute;
-    background: url(../img/big-dj-aura.svg) no-repeat;
 
+  }
+}
+.b-rect-big{
+  position: relative;
+  &:before{
+    width: 801px;
+    height: 333px;
+    
+    content: "";
+    position: absolute;
+    background: functions.src("big-Rectangle.png") no-repeat;
   }
 }
 
@@ -224,12 +235,16 @@
 }
 
 .offer-area{
-  max-width: 175px;
-  margin:0 auto;
-  padding:20px 0;
+  margin:10px auto;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   
+  &_lvl1{
+    margin-top: 20px;
+  }
+
   ins{
     margin-left: 10px;
     font-weight: 900;
@@ -237,7 +252,15 @@
     color:$green;
     text-decoration: none;
   }
-  
+
+  &_lvl2 ins{
+    color: $red;  
+  }
+
+  &_lvl3 ins{
+    $background_purple: linear-gradient(82.56deg, #B80079 0%, #069BB8 100%);
+  }
+
   del{
     margin-left: 10px;
     margin-top: 2px;
@@ -250,37 +273,58 @@
 }
 
 .def-bg2{
-  font-size: rem(48px);
-  line-height: 120%;
-  text-transform: uppercase;
   background: $background_purple;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  font-weight: 900;
 }
+
 
 .about,.aboutv2{
   margin-top: 110px;
   justify-content: space-between;
   
-  &__picture{
-    max-width: 332px;
+  .about__picture{
+    width: 128px;
+    height: 128px;
+    background-position: 50% 50%;
+    background-size: cover;
+    
+    &-item{
+      cursor: pointer;
+      order:2;
+      opacity: .5;
+    }
+
+    &_main-item .about__picture{
+      width: 332px;
+      height: 332px;
+      cursor: default;
+    }
+    &-item.about__picture_main-item{
+      order:1;
+      opacity: 1;
+      cursor: default;
+    }
   }
   
   &__text-area{
     margin-top: 30px;
     max-width: 700px;
-  
-    
   }
-  
-  
+}
+
+.about__picture-area {
+  margin-top: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 28%;
+  justify-content: space-between;
 }
 
 .cuts{
-  margin-top: 135px;
+  margin-top: 115px;
 }
 
 .aboutv2{
@@ -303,8 +347,14 @@
     margin-top: 90px;
     justify-content: space-between;
   }
+  .offer-area{
+    margin-bottom:0;
+  }
+.map{
+  width: 68%;
+}
   &__address{
-    width: 18%;
+    width: 30%;
     align-items: center;
     flex-direction: column;
     
@@ -315,6 +365,7 @@
       background: functions.src("Geo.svg") 0 0 no-repeat;
     }
   }
+  
   address{
     font-weight: 600;
     font-size: 20px;
@@ -323,10 +374,38 @@
     margin-bottom: 30px;
     
   }
-  
 }
+
 .faq-area{
-  width: 50%;
-  margin-top: 130px;
   margin-left: auto;
+  margin-right: auto;
+  margin-top: 130px;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+}
+
+.link-specialv2_whatsapp{
+  margin-right: 40px;
+}
+
+.phone-icon{
+  padding-left: 23px;
+  display: inline-block;
+  background: functions.src("Phone_icon.svg") 0 0 no-repeat;
+}
+.faq-area_p1{
+  margin-bottom: 25px;
+}
+.faq-area_p2{
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.fb-icon{
+  padding-left: 30px;
+  display: inline-block;
+  background: functions.src("FB_Logo.svg") 0 50% no-repeat;
+  line-height: 120%;
+  
 }
