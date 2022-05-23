@@ -30,6 +30,9 @@ body {
   min-width: #{screen(xxs)};
   background: functions.src('Waves_1.png') 0 0 repeat-x;
   background-color: #141424;
+  @media (#{maxScreen(md)}) {
+    background-position-y:-2%;
+  }
 }
 
 h2{
@@ -64,7 +67,19 @@ a {
     position: relative;
     top: -10px;
     left: -18px;
-  } 
+    @media (#{maxScreen(md)}) {
+      top:15px;
+      left:auto;
+      position: absolute;
+      right:15px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background: -o-linear-gradient(7.91deg,#4bffff -4.58%,#44d0a1 81.43%);
+      background: linear-gradient(82.09deg,#4bffff -4.58%,#44d0a1 81.43%);
+      -webkit-background-clip: text;
+    }
+  }
+
 }
 
 .link-special {

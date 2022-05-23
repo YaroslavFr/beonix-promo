@@ -1,8 +1,14 @@
 .navbar {
   position: relative;
-    z-index: 10;
-    padding-top: 25px;
-  
+  z-index: 10;
+  margin-top: 60px;
+
+  @media (#{maxScreen(md)}) {
+    width:auto;
+    margin-top: 10px;
+  }
+
+
   &__title {
     display: block;
     text-align: center;
@@ -20,5 +26,232 @@
   }
   li{
     padding:10px 0;
+    @media (#{maxScreen(md)}) {
+      margin-bottom: 10px;
+    }
   }
+}
+
+.category .navbar,
+.page .navbar{
+  position: relative;
+}
+
+.footer{
+  .navbar__logo{
+      @media (#{maxScreen(xs)}) {
+        width:auto;
+      }
+  }
+}
+
+.navbar {
+  z-index: 10;
+
+  &__logo {
+    width: 160px;
+    height: 17px;
+    display: inline-block;
+
+  
+
+    @media (#{maxScreen(xs)}) {
+      height: 36px;
+      background-position: 0;
+      background-size: 100%;
+    }
+  }
+}
+
+.hiddenCont {
+  overflow: hidden;
+}
+
+.sm-menu {
+  display: none;
+
+  @media (max-width: 992px) {
+    display: block;
+    z-index: 10;
+    a{
+      font-size: rem(16px);
+      line-height: 120%;
+    }
+  }
+}
+
+.menu {
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+
+  &>div>li {
+    display: inline;
+
+    //margin: 25px 0;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  & .navbar__list a,
+  &>div>a {
+    backdrop-filter: blur(50px);
+    margin-left: 15px;
+    background: #04191a2e;
+    padding: 25px 50px;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: rem(18px);
+    transition: .5s;
+
+    &:hover {
+      color: #c9c5c5;
+      background: #04191a57;
+      transition: .5s;
+    }
+
+    &>a {
+      background: none;
+    }
+  }
+  // .current-menu-item,
+  &>ul>a.aqua,
+  &>div>a.aqua {
+    background: rgb(34 209 178 / 50%);
+    mix-blend-mode: overlay;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+/************************************************/
+/****************** NAVIGATION ******************/
+/************************************************/
+nav {
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/*** INPUT ***/
+nav input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+/*** LABEL ***/
+nav label {
+  cursor: pointer;
+  display: block;
+  font: 2em/1 'Oswald', sans-serif;
+  padding: 0.5em 0;
+}
+
+/* Hamburger Icon */
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+  background: #FFFFFF;
+  border-radius: 0.05em;
+  height: 0.1em;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+#menu-icon {
+  display: inline-block;
+  margin: 0.4em 0;
+  max-width: 1em;
+  position: relative;
+}
+
+nav label #menu-icon {
+  float: left;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+  content: '';
+  left: 0;
+  position: absolute;
+}
+
+#menu-icon:before {
+  top: -0.4em;
+}
+
+#menu-icon:after {
+  bottom: -0.4em;
+}
+
+/* Close Icon */
+nav input[type=checkbox]:checked+label #menu-icon {
+  background: transparent;
+}
+
+nav input[type=checkbox]:checked+label #menu-icon:before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+nav input[type=checkbox]:checked+label #menu-icon:after {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+
+/*** MENU ***/
+/* Overlay */
+nav input:checked~#overlay {
+  background: #0F0F0F;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+/* List */
+nav .sm-menu ul {
+  font-size: 1.5em;
+  list-style: none;
+  margin: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+}
+
+nav input:checked~ul {
+  margin: 1em;
+  max-height: inherit;
+  opacity: 1;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+nav ul a:hover {
+  text-decoration: underline;
+}
+
+/* Social Media */
+nav ul#social-media>li {
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0.5em;
 }

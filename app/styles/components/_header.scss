@@ -8,10 +8,28 @@ header{
   top:0;
   text-align: center;
   width: 100%;
+  display: none;
 
+  @media (#{maxScreen(md)}) {
+    display: block;
+  }
   
 }
+
+.logo-item{
+  margin-top: -41px;
+}
+
 .logo{
   max-width: 100px;
   display: inline-block;
+  @media (#{maxScreen(md)}) {
+    position: relative;
+    z-index: 10;
+
+    img{
+      width: 80px;
+    }
+    
+  }
 }
