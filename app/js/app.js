@@ -3,7 +3,7 @@ import Swiper from 'swiper/bundle'
 
 document.addEventListener('DOMContentLoaded', () => {
 	"use strict"
-	const breakpoint = window.matchMedia( '(min-width:768px)' );
+	const breakpoint = window.matchMedia( '(min-width:1024px)' );
 
 	// keep track of swiper instances to destroy later
 	let mySwiper;

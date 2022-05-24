@@ -2,6 +2,7 @@
 
   width: 28%;
   overflow: visible;
+  margin-left: 0;
   @media (#{maxScreen(md)}) {
     width: 100%;
     // overflow: hidden;

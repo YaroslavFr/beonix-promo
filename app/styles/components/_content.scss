@@ -65,7 +65,8 @@
     position: relative;
     left: -25px;
     @media (#{maxScreen(md)}) {
-      width: 345px;
+      width: 100%;
+      left:0
     }
   }
 
@@ -77,10 +78,12 @@
     text-align: center;
     @media (#{maxScreen(md)}) {
       width: 100%;
-      top: 59%;
+      top: 50%;
     }
     img{
-      max-width: 1100px;
+      @media (#{minScreen(md)}) {
+        max-width: 1100px;
+      }
     }
   }
 
@@ -143,23 +146,54 @@
 .about__picture-item,
 .b-circle{
   position: relative;
-  &:before{
-    width: 120px;
-    height: 120px;
-    top: 14px;
-    right: -9px;
-    background: url(../img/dj_aura.svg) no-repeat;
-    border-radius: 50%;
-    content: "";
-    position: absolute;
-    @media (#{maxScreen(xs)}) {
-      width: 140px;
-      height: 140px;
-      background-size: cover;
+  
+  &:hover{
+    &:before{
+      top:0;
+      right:0;
     }
-    
+  }
+
+  &:before{
+      transition:.7s;
+      width: 128px;
+      height: 128px;
+      top: 14px;
+      right: -9px;
+      background: url(../img/dj_aura.svg) no-repeat;
+      background-size: contain;
+      border-radius: 50%;
+      content: "";
+      position: absolute;
+      
+      @media (#{maxScreen(md)}) {
+        width: 100%;
+        background-size: cover;
+        
+      }
+      
+    }
+  }
+
+  @media (#{maxScreen(md)}) {
+  
+    .b-circle{
+    &:before{
+      height: 100%;
+    }
+  }
+  
+  .about__picture-item{
+    &:before{
+      width: 330px;
+      height: 330px;
+      background: functions.src('big-dj-aura.svg');
+    }
   }
 }
+
+  
+
 @media (#{maxScreen(xs)}) {
   .about__picture-item:before{
     width: 332px;
@@ -192,6 +226,11 @@
     background: functions.src("big-Rectangle.png") no-repeat;
     right:-25px;
     top:25px;
+    @media (#{maxScreen(md)}) {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+    }
   }
 }
 
@@ -199,8 +238,8 @@
   position: relative;
   
   &:before{
-    width: 330px;
-    height: 330px;
+    width: 100%;
+    height: 100%;
     
     content: "";
     position: absolute;
@@ -272,6 +311,7 @@
     margin-bottom: 29px;
     @media (#{maxScreen(md)}) {
       margin-bottom: 60px;
+      max-width: 160px;
     }
   }
   
@@ -279,7 +319,14 @@
     max-width: 128px;
     border-radius: 50%;
     overflow: hidden;
+    @media (#{maxScreen(md)}) {
+      max-width: 160px;
+      img{
+        min-width: 150px;
+        max-width: none;
+      }
   }
+}
 
   &__name{
     text-transform: uppercase;
@@ -433,7 +480,9 @@
     &-item{
       cursor: pointer;
       order:2;
-      opacity: .5;
+      @media (#{minScreen(md)}) {
+        opacity: .5;
+      }
     }
 
     &_main-item .about__picture{
@@ -451,6 +500,12 @@
   &__text-area{
     margin-top: 30px;
     max-width: 700px;
+    @media (#{maxScreen(lg)}) {
+      max-width: 600px;
+    }
+    @media (#{maxScreen(md)}) {
+      max-width: none;
+    }  
   }
 }
 
@@ -488,6 +543,20 @@
     }
     @media (#{maxScreen(md)}) {
       order: 1;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  @media (#{maxScreen(md)}) {
+    &__item{
+      width: 40%;
+    }
+  }
+  @media (#{maxScreen(xs)}) {
+    &__item{
+      width: auto;
     }
   }
 
@@ -547,27 +616,34 @@
   width: 50%;
   text-align: center;
   justify-content: center;
-  @media (#{maxScreen(md)}) {
+  
+  @media (#{maxScreen(lg)}) {
     width: 100%;
     margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
   }
+
   &__call-to-action{
     @media (#{maxScreen(md)}) {
       display: none;
     }
   }
+
 }
 
 .link-specialv2{
+  max-width: 350px;
   &_whatsapp{
-  @media (#{minScreen(md)}) {
+  @media (#{minScreen(lg)}) {
     margin-right: 40px;
   }
 }
-@media (#{maxScreen(md)}) {
+@media (#{maxScreen(lg)}) {
+  width: 350px;
   &_call{
     margin-top: 15px;
-    width: 320px;
+    
   }
 }
 }

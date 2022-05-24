@@ -6,6 +6,14 @@
   @media (#{maxScreen(md)}) {
     width:auto;
     margin-top: 10px;
+    
+    .menu{
+      display: none;
+    }
+    .sm-menu{
+      display: block;
+    }
+
   }
 
 
