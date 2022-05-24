@@ -3,7 +3,7 @@
 
 .content {
   position: relative;
-  padding: 0px 0 30px;
+  padding: 0px 0 100px;
 
   &:before{
     width: 678px;
@@ -13,6 +13,9 @@
     position: absolute;
     content:"";
     background: functions.src("main__bg-right.png") 0 0 no-repeat;
+    @media (#{maxScreen(md)}) {
+      content:none;
+    }
   }
 
   &:after{
@@ -23,7 +26,9 @@
     position: absolute;
     content:"";
     background: functions.src("main__bg-left.png") 0 0 no-repeat;
-    
+    @media (#{maxScreen(md)}) {
+      content:none;
+    }
   }
 
   &__title {
@@ -51,11 +56,14 @@
   text-align: center;
   position: relative;
   max-height: 1007px;
+  
   @media (#{maxScreen(md)}) {
     margin-top: 50px;
   }
   > img{
-    width: 64%;
+    width: 65%;
+    position: relative;
+    left: -25px;
     @media (#{maxScreen(md)}) {
       width: 345px;
     }
@@ -69,7 +77,7 @@
     text-align: center;
     @media (#{maxScreen(md)}) {
       width: 100%;
-      top: 47%;
+      top: 59%;
     }
     img{
       max-width: 1100px;
@@ -81,6 +89,9 @@
     bottom: 65px;
     @media (#{maxScreen(md)}) {
       bottom: 0;
+    }
+    @media (#{maxScreen(xs)}) {
+      bottom:-90px;
     }
   }
 
@@ -146,6 +157,13 @@
       height: 140px;
       background-size: cover;
     }
+    
+  }
+}
+@media (#{maxScreen(xs)}) {
+  .about__picture-item:before{
+    width: 332px;
+    height: 332px;
   }
 }
 .about__picture-item.about__picture_main-item,
@@ -187,6 +205,9 @@
     content: "";
     position: absolute;
     background: url(../img/Rectangle_3.svg) no-repeat;
+    @media (#{maxScreen(md)}) {
+      background-size: contain;
+    }
   }
 }
 
@@ -194,6 +215,9 @@
   &:before{
     top:18px;
     left:-20px;
+    @media (#{maxScreen(md)}) {
+      left:1px
+    }
   }
 }
 
@@ -210,6 +234,10 @@
 
   @media (#{maxScreen(md)}) {
     grid-template-columns: repeat(1,1fr) !important;
+    padding-bottom: 60px;
+  }
+  @media (#{maxScreen(xs)}) {
+    margin-top: 150px;
   }
 
   &__item{
@@ -287,15 +315,60 @@
   margin-bottom: 30px;
 }
 
+@media (#{maxScreen(md)}) {
+  .booking-area{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #000;
+    left: 0;
+    z-index: 100;
+    border-top: 1px solid $teal;
+  }
+}
+
+.hurry-book{
+  margin-bottom: 30px;
+  text-align: center;
+  span{
+    -webkit-text-fill-color: transparent;
+    background: $background_green;
+    -webkit-background-clip: text;
+  }
+  @media (#{maxScreen(md)}) {
+    font-size: rem(12px);
+    margin:10px 0;
+  }
+
+}
+
 .offer-area{
   margin:10px auto;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (#{maxScreen(md)}) {
+    width: 25%;
+    font-size: rem(12px);
+    text-align: center;
+  }
+
+  &__wrapper{
+    max-width: 330px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    @media (#{maxScreen(md)}) {
+      margin-top: 10px;
+    }
+  }
   
   &_lvl1{
-    margin-top: 20px;
+    @media (#{minScreen(md)}) {
+      margin-top: 20px;
+    }
   }
 
   ins{
@@ -304,6 +377,9 @@
     line-height: 120%;
     color:$green;
     text-decoration: none;
+    @media (#{maxScreen(md)}) {
+      margin-top: 5px;
+    }
   }
 
   &_lvl2 ins{
@@ -322,7 +398,11 @@
   &__text{
     line-height: 120%;
     font-weight: 500;
+    @media (#{maxScreen(md)}) {
+      line-height: 140%;
+    }
   }
+  
 }
 
 .def-bg2{
@@ -337,10 +417,16 @@
 .about,.aboutv2{
   margin-top: 110px;
   justify-content: space-between;
+  position: relative;
+  z-index: 1;
   
   .about__picture{
     width: 128px;
     height: 128px;
+    @media (#{maxScreen(md)}) {
+      width: 332px;
+      height: 332px;
+    }
     background-position: 50% 50%;
     background-size: cover;
     
@@ -372,23 +458,36 @@
   margin-top: 55px;
   display: flex;
   flex-wrap: wrap;
-  width: 28%;
   justify-content: space-between;
+  
+  @media (#{maxScreen(md)}) {
+    flex-wrap: nowrap;
+  }
+
 }
 
 .cuts{
   margin-top: 115px;
+  @media (#{maxScreen(md)}) {
+    margin-top: 45px;
+  }
 }
 
 .aboutv2{
   
   &__text-area{
     margin-top: 60px;
+    @media (#{maxScreen(md)}) {
+      order: 2;
+    }
   }
 
   &__picture{
     img{
       margin-bottom: 50px;
+    }
+    @media (#{maxScreen(md)}) {
+      order: 1;
     }
   }
 
@@ -400,16 +499,27 @@
     margin-top: 90px;
     justify-content: space-between;
   }
+
   .offer-area{
     margin-bottom:0;
   }
-.map{
-  width: 68%;
-}
+
+  .map{
+    width: 68%;
+    @media (#{maxScreen(md)}) {
+      width: 100%;    
+    }
+  }
+
+
   &__address{
     width: 30%;
     align-items: center;
     flex-direction: column;
+    @media (#{maxScreen(md)}) {
+      width: 100%;
+      margin-top: 45px
+    }
     
     &-icon{
       width: 77px;
@@ -427,7 +537,8 @@
     margin-bottom: 30px;
     
   }
-}
+  }
+
 
 .faq-area{
   margin-left: auto;
@@ -436,10 +547,29 @@
   width: 50%;
   text-align: center;
   justify-content: center;
+  @media (#{maxScreen(md)}) {
+    width: 100%;
+    margin-top: 30px;
+  }
+  &__call-to-action{
+    @media (#{maxScreen(md)}) {
+      display: none;
+    }
+  }
 }
 
-.link-specialv2_whatsapp{
-  margin-right: 40px;
+.link-specialv2{
+  &_whatsapp{
+  @media (#{minScreen(md)}) {
+    margin-right: 40px;
+  }
+}
+@media (#{maxScreen(md)}) {
+  &_call{
+    margin-top: 15px;
+    width: 320px;
+  }
+}
 }
 
 .phone-icon{

@@ -3,29 +3,56 @@
   z-index: 10;
   padding: 50px 0;
   background-color: #000;
-
-  .footer__content-wrap{
+  @media (#{maxScreen(md)}) {
+    padding-bottom: 170px;
+    .link-special{
+      display: none;
+    }
+  }
+  &__content-wrap{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    @media (#{maxScreen(md)}) {
+      flex-direction: column;
+    }
 
     .link-special{
       margin-left: auto;
     }
     .logo{
       position: relative;
-      left: -20px;
+      @media (#{minScreen(md)}) {
+        left: -20px;
+      }
     }
   }
 
   &__menu{
     width: 52.9%;
-    margin-right: 7%;
-    margin-left: 2%;
     justify-content: space-between;
     align-items: center;
+    @media (#{minScreen(md)}) {
+      margin-right: 7%;
+      margin-left: 2%;
+    }
+    @media (#{maxScreen(md)}) {
+      width: 100%;
+      flex-direction: column;
+      margin-top: 60px;
+      li{
+        margin-bottom: 33px;
+      }
+      a{
+        font-weight: 700;
+      }
+    }
   }
   .footer__policy{
     opacity: .5;
+    @media (#{maxScreen(md)}) {
+      display: inline-block;
+      margin:10px 0 50px;
+    }
   } 
 }

@@ -41,12 +41,18 @@ h2{
   max-width: 700px;
   text-align: center;
   margin:0 auto;
+  @media (#{maxScreen(md)}) {
+    font-size: rem(16px);
+  }
 }
 h3{
   font-size: rem(48px);
   line-height: 120%;
   text-transform: uppercase;
   font-weight: 900;
+  @media (#{maxScreen(md)}) {
+    font-size: rem(32px);
+  }
 }
 h1,
 h2,
@@ -63,23 +69,28 @@ a {
 }
 
 .navbar{
+  &__buy{
+    text-align: right;
+  }
   .link-special{
     position: relative;
     top: -10px;
     left: -18px;
     @media (#{maxScreen(md)}) {
-      top:15px;
+      top:0;
       left:auto;
       position: absolute;
-      right:15px;
+      right:-10px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background: -o-linear-gradient(7.91deg,#4bffff -4.58%,#44d0a1 81.43%);
       background: linear-gradient(82.09deg,#4bffff -4.58%,#44d0a1 81.43%);
       -webkit-background-clip: text;
+      span{
+        display: block;
+      }
     }
   }
-
 }
 
 .link-special {
@@ -148,6 +159,9 @@ p{
   line-height: 150%;
   font-weight: 500;
   margin-top: 30px;
+  @media (#{maxScreen(md)}) {
+    font-size: rem(16px);
+  }
 }
 
 .text-center{

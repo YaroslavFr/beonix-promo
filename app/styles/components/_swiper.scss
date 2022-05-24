@@ -1,8 +1,15 @@
 .swiper {
+
+  width: 28%;
+  overflow: visible;
+  @media (#{maxScreen(md)}) {
+    width: 100%;
+    // overflow: hidden;
+  }
   &-slide {
-    background-color: $dark;
-    height: 300px;
-    display: flex;
+    width:auto;
+    height: auto;
+    display: block;
     align-items: center;
     justify-content: center;
   }
@@ -24,7 +31,6 @@
     align-items: center;
     justify-content: center;
     color: $white;
-    background-color: rgba(#000, .8);
     opacity: .4;
     transition: all .09s ease-out;
   }
