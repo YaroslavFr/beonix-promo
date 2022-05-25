@@ -16,7 +16,6 @@
 
   }
 
-
   &__title {
     display: block;
     text-align: center;
@@ -202,6 +201,7 @@ nav label #menu-icon {
 /* Close Icon */
 nav input[type=checkbox]:checked+label #menu-icon {
   background: transparent;
+  float: right;
 }
 
 nav input[type=checkbox]:checked+label #menu-icon:before {
@@ -252,7 +252,9 @@ nav input:checked~ul {
   justify-content: center;
   margin-top: 100px;
 }
-
+nav input:checked~.navbar__buy{
+  display: none;
+}
 nav ul a:hover {
   text-decoration: underline;
 }

@@ -149,8 +149,8 @@
   
   &:hover{
     &:before{
-      top:0;
-      right:0;
+      top:0 !important;
+      right:0 !important;
     }
   }
 
@@ -223,17 +223,52 @@
     
     content: "";
     position: absolute;
-    background: functions.src("big-Rectangle.png") no-repeat;
+    // background: functions.src("big-Rectangle.png") no-repeat;
     right:-25px;
     top:25px;
-    @media (#{maxScreen(md)}) {
+    @media (#{maxScreen(lg)}) {
       width: 100%;
       height: 100%;
       background-size: contain;
+      // background: functions.src("big-Rectanble-mob.png") no-repeat;
     }
   }
 }
-
+.rectangle{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top:25px;
+  left:20px;
+  @media (#{maxScreen(md)}) {
+    width: 91%;
+    left: 0;
+  }
+  &>div{
+    position: absolute;
+    &:first-child,
+    &:nth-child(3)
+    {
+      width: 5px;
+      height: 100%;
+      background: #B80079;
+    }
+    &:nth-child(2),
+    &:nth-child(4)
+    {
+      width: 100%;
+      height: 5px;
+      background: $background_purple;
+    }
+    &:nth-child(3){
+      right:0;
+      background: #069BB8;
+    }
+    &:nth-child(4){
+      bottom:0;
+    }
+  }
+}
 .b-rect{
   position: relative;
   
@@ -257,6 +292,9 @@
     @media (#{maxScreen(md)}) {
       left:1px
     }
+    @media (#{maxScreen(sm)}) {
+      left:-19px
+    }
   }
 }
 
@@ -270,7 +308,7 @@
 .djs-list{
   margin-top: 60px;
   padding-bottom: 175px;
-
+  
   @media (#{maxScreen(md)}) {
     grid-template-columns: repeat(1,1fr) !important;
     padding-bottom: 60px;
@@ -280,6 +318,25 @@
   }
 
   &__item{
+    &:nth-child(2) 
+    {
+      .b-circle{
+        &::before{
+          top: -10px;
+          right: 15px;
+        }
+      }
+    }
+    &:nth-child(3) 
+    {
+      .b-circle{
+        &::before{
+          top: 10px;
+          right: 5px;
+        }
+      }
+    }
+
     @media (#{maxScreen(md)}) {
       display: flex;
       flex-wrap: wrap;
@@ -459,7 +516,9 @@
   background-clip: text;
   text-fill-color: transparent;
 }
-
+h3.def-bg2{
+  font-weight: 900;
+}
 
 .about,.aboutv2{
   margin-top: 110px;
@@ -548,7 +607,11 @@
       flex-wrap: wrap;
       justify-content: space-between;
     }
+    @media (#{maxScreen(sm)}) {
+      justify-content: center;
+    }
   }
+
   @media (#{maxScreen(md)}) {
     &__item{
       width: 40%;
@@ -567,6 +630,9 @@
   &__wrap{
     margin-top: 90px;
     justify-content: space-between;
+    @media (#{maxScreen(md)}) {
+      margin-top: 40px;
+    }
   }
 
   .offer-area{
@@ -577,7 +643,13 @@
     width: 68%;
     @media (#{maxScreen(md)}) {
       width: 100%;    
+      iframe{
+        width: 90%;
+        margin:0 auto;
+        display: block;
+      }
     }
+
   }
 
 
@@ -647,6 +719,13 @@
   }
 }
 }
+.link-specialv2{
+  &:hover{
+    .phone-icon{
+      background: functions.src("Phone_icon-hover.svg") 0 0 no-repeat;  
+    }
+  }
+}
 
 .phone-icon{
   padding-left: 23px;
@@ -661,10 +740,16 @@
   margin-bottom: 20px;
 }
 
+.link-specialv3{
+  &:hover{
+    .fb-icon{
+      background:functions.src("fb_hover.svg") 0 50% no-repeat;
+    }
+  }
+}
 .fb-icon{
   padding-left: 30px;
   display: inline-block;
   background: functions.src("FB_Logo.svg") 0 50% no-repeat;
   line-height: 120%;
-  
 }

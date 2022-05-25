@@ -133,6 +133,18 @@ a {
       background-clip: text;
       text-fill-color: transparent;
       border: 1px solid #4BFFFF;
+
+      &:hover,
+      &:active {
+        color: $white;
+        background: white;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        border: 1px solid white;
+      }
+
     }
     &v3{
       padding: 16px 50px;
@@ -141,6 +153,13 @@ a {
       color:$blue;
       border:1px solid $blue;
       border-radius: $def_border_radius;
+
+      &:hover,
+      &:active {
+        color: white;
+        border:1px solid white;
+      }
+
     }
   }
   
