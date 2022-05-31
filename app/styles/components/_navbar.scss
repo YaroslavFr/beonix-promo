@@ -255,10 +255,17 @@ nav input:checked~ul {
 nav input:checked~.navbar__buy{
   display: none;
 }
-nav ul a:hover {
-  text-decoration: underline;
-}
+nav ul a{
+  &.link-special{
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    text-decoration: underline;
+  }
 
+}
 /* Social Media */
 nav ul#social-media>li {
   display: inline-block;
