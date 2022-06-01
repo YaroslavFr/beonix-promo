@@ -43,11 +43,17 @@
   max-height: 1007px;
 
   @media (#{maxScreen(md)}) {
-    margin-top: 50px;
+    margin-top: 85px;
+    left: -15px;
+    width: 108%;
   }
 
   & img {
     position: relative;
+
+    @media (#{minScreen(md)}) {
+      left: -80px;
+    }
 
     @media (#{maxScreen(md)}) {
       width: 100%;
@@ -106,14 +112,14 @@
     line-height: 120%;
 
     @media (#{maxScreen(xs)}) {
-      width: 60%;
+      width: 90%;
       margin: 0 auto;
       font-size: rem(16px);
     }
   }
 
   &__event-time {
-    max-width: 440px;
+    max-width: 570px;
     margin: 20px auto;
     font-weight: 600;
     font-size: rem(20px);
@@ -210,7 +216,7 @@
   height: 100%;
   left: -25px;
   position: absolute;
-  top: -25px;
+  top: -27px;
 
   @media (#{maxScreen(md)}) {
     width: 91%;
@@ -305,10 +311,10 @@
 
       .b-circle {
         &::before {
-          width: 120px;
           height: 120px;
-          right: 43px;
-          top: -10px;
+          right: 9px;
+          top: -9px;
+          width: 120px;
         }
       }
     }
@@ -339,10 +345,18 @@
         }
       }
 
+      &:nth-child(2) {
+        .djs-list__name {
+          font-size: rem(40px);
+        }
+      }
+
       &:nth-child(2),
       &:nth-child(3) {
         .djs-list__picture-area {
-          margin: 0 auto 29px;
+          width: 120px;
+          height: 120px;
+          margin: 33px auto 29px;
         }
       }
     }
@@ -368,7 +382,7 @@
       max-width: 160px;
 
       img {
-        min-width: 150px;
+        min-width: 120px;
         max-width: none;
       }
     }
@@ -381,6 +395,8 @@
     line-height: 100%;
     margin-bottom: 20px;
     text-align: center;
+
+
 
     @media (#{maxScreen(md)}) {
       font-size: rem(32px);
@@ -546,6 +562,13 @@ h3.def-bg2 {
   font-weight: 900;
 }
 
+
+@media (#{maxScreen(md)}) {
+  section.about {
+    margin-top: 0;
+  }
+}
+
 .about,
 .aboutv2 {
   margin-top: 110px;
@@ -560,6 +583,8 @@ h3.def-bg2 {
     @media (#{maxScreen(md)}) {
       width: 332px;
       height: 332px;
+
+
     }
 
     background-position: 50% 50%;
@@ -597,6 +622,10 @@ h3.def-bg2 {
 
     @media (#{maxScreen(md)}) {
       max-width: none;
+
+      p {
+        margin-top: 15px;
+      }
     }
   }
 }
@@ -609,7 +638,12 @@ h3.def-bg2 {
 
   @media (#{maxScreen(md)}) {
     flex-wrap: nowrap;
+    justify-content: center;
   }
+}
+
+.promo-video {
+  margin-top: 80px;
 }
 
 .cuts {

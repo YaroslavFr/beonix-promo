@@ -96,6 +96,7 @@ a {
       background: -o-linear-gradient(7.91deg, #4bffff -4.58%, #44d0a1 81.43%);
       background: linear-gradient(82.09deg, #4bffff -4.58%, #44d0a1 81.43%);
       -webkit-background-clip: text;
+      font-weight: 600;
 
       span {
         display: block;
@@ -174,7 +175,7 @@ a {
   }
 
   &v3 {
-    padding: 16px 50px;
+    padding: 12px 50px;
     font-size: functions.rem(20px);
     font-weight: 600;
     color: $blue;
