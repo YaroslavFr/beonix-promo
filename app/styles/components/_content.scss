@@ -5,35 +5,6 @@
   position: relative;
   padding: 0px 0 100px;
 
-  &:before {
-    width: 678px;
-    height: 887px;
-    top: 50%;
-    right: 0;
-    position: absolute;
-    content: "";
-    background: functions.src("main__bg-right.png") 0 0 no-repeat;
-
-    @media (#{maxScreen(md)}) {
-      content: none;
-    }
-  }
-
-  &:after {
-    width: 658px;
-    height: 1500px;
-    top: 63%;
-    left: 0;
-    position: absolute;
-    content: "";
-    background: functions.src("main__bg-left.png") 0 0 no-repeat;
-    z-index: -1;
-
-    @media (#{maxScreen(md)}) {
-      content: none;
-    }
-  }
-
   &__title {
     display: block;
     text-align: center;
@@ -54,6 +25,17 @@
   }
 }
 
+.main-background {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 100px;
+
+  @media (#{maxScreen(sm)}) {
+    top: 0
+  }
+}
+
 .promodj {
   margin-top: 10px;
   text-align: center;
@@ -64,16 +46,16 @@
     margin-top: 50px;
   }
 
-  >img {
-    width: 65%;
+  & img {
     position: relative;
-    left: -25px;
 
     @media (#{maxScreen(md)}) {
       width: 100%;
-      left: 0;
+      height: auto;
+
     }
   }
+
 
   &__name {
     width: 90%;
@@ -100,10 +82,6 @@
 
     @media (#{maxScreen(md)}) {
       bottom: 0;
-    }
-
-    @media (#{maxScreen(xs)}) {
-      bottom: -90px;
     }
   }
 
@@ -168,8 +146,8 @@
 
   &:before {
     transition: 0.7s;
-    width: 128px;
-    height: 128px;
+    width: 100%;
+    height: 100%;
     top: 14px;
     right: -9px;
     background: url(../img/dj_aura.svg) no-repeat;
@@ -213,13 +191,13 @@
   position: relative;
 
   &:before {
-    width: 330px;
-    height: 330px;
-    top: 9px;
-    right: -9px;
     background: url(../img/big-dj-aura.svg) no-repeat;
     content: "";
+    height: 330px;
     position: absolute;
+    right: -19px;
+    top: 21px;
+    width: 330px;
   }
 }
 
@@ -230,9 +208,9 @@
 .rectangle {
   width: 100%;
   height: 100%;
-  top: -25px;
   left: -25px;
   position: absolute;
+  top: -25px;
 
   @media (#{maxScreen(md)}) {
     width: 91%;
@@ -316,15 +294,21 @@
   }
 
   @media (#{maxScreen(xs)}) {
-    margin-top: 150px;
+    margin-top: 50px;
   }
 
   &__item {
     &:nth-child(2) {
+      .djs-list__picture {
+        max-width: 120px;
+      }
+
       .b-circle {
         &::before {
+          width: 120px;
+          height: 120px;
+          right: 43px;
           top: -10px;
-          right: 15px;
         }
       }
     }
@@ -365,7 +349,7 @@
   }
 
   &__picture-area {
-    max-width: 128px;
+    max-width: 153px;
     position: relative;
     margin-bottom: 29px;
 
@@ -376,7 +360,7 @@
   }
 
   &__picture {
-    max-width: 128px;
+    max-width: 153px;
     border-radius: 50%;
     overflow: hidden;
 
@@ -443,8 +427,34 @@
 }
 
 .hurry-book {
-  margin-bottom: 30px;
+  margin-bottom: 23px;
   text-align: center;
+
+  @media (#{maxScreen(md)}) {
+    span {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+
+  &__currency {
+    display: none;
+    margin-left: 5px;
+    font-weight: 900;
+
+    &-value {
+      display: none;
+      font-weight: 900;
+
+      @media (#{maxScreen(md)}) {
+        display: inline-block;
+      }
+    }
+
+    @media (#{maxScreen(md)}) {
+      display: inline-block;
+    }
+  }
 
   span {
     -webkit-text-fill-color: transparent;
@@ -460,7 +470,8 @@
 }
 
 .offer-area {
-  margin: 10px auto;
+  width: 100%;
+  margin: 4px auto;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -473,10 +484,10 @@
   }
 
   &__wrapper {
-    max-width: 330px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    padding-top: 20px;
 
     @media (#{maxScreen(md)}) {
       margin-top: 10px;
@@ -485,9 +496,7 @@
   }
 
   &_lvl1 {
-    @media (#{minScreen(md)}) {
-      margin-top: 20px;
-    }
+    @media (#{minScreen(md)}) {}
   }
 
   ins {
@@ -657,6 +666,7 @@ h3.def-bg2 {
   &__wrap {
     margin-top: 90px;
     justify-content: space-between;
+    align-items: flex-start;
 
     @media (#{maxScreen(md)}) {
       margin-top: 40px;
@@ -664,7 +674,7 @@ h3.def-bg2 {
   }
 
   .offer-area {
-    margin-bottom: 0;
+    // margin-bottom: 0;
   }
 
   .map {
@@ -724,6 +734,8 @@ h3.def-bg2 {
   }
 
   &__call-to-action {
+    text-align: center;
+
     @media (#{maxScreen(md)}) {
       display: none;
     }

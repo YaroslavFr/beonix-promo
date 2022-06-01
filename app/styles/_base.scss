@@ -28,8 +28,9 @@ body {
   overflow-x: hidden;
   height: auto;
   min-width: #{screen(xxs)};
-  background: functions.src('Waves_1.png') 0 0 repeat-x;
-  background-color: #141424;
+  background: rgb(85, 6, 58);
+  // background: linear-gradient(130deg, rgba(85, 6, 58, 1) 0%, rgba(0, 72, 86, 1) 100%);
+  background: radial-gradient(circle at -40% -40%, #55063a 25%, #141424 40%, #004856 120%);
 
   @media (#{maxScreen(md)}) {
     background-position-y: -2%;
@@ -117,6 +118,10 @@ a {
   font-weight: 500;
   display: inline-block;
 
+  &:hover {
+    box-shadow: 0px 0px 30px #44D0A1;
+  }
+
   &:hover,
   &:active {
     color: $white;
@@ -145,6 +150,10 @@ a {
     background-clip: text;
     text-fill-color: transparent;
     border: 1px solid #4BFFFF;
+
+    &:hover {
+      text-shadow: 0px 0px 20px #44D0A1;
+    }
 
     @media (#{maxScreen(xs)}) {
       padding-left: 20px;
